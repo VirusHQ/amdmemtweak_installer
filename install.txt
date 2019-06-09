@@ -1,0 +1,20 @@
+#!/bin/bash
+# File hosted and compiled by Unsivil (https://github.com/unsivilaudio), script by Virus to install the ethos compiled version of the AMD Tweak tool. 
+# Run `source <(curl -s URL_HERE )` to install. 
+if [ ! -f /home/ethos/amdmemtweak ] ; then 
+  wget https://github.com/unsivilaudio/VegaToolsNConfigs/releases/download/1.0/amdmemtweak -O /home/ethos/amdmemtweak
+  if ! echo "B73F911618C34C3CA8B8BD0965B2E1951F3DF168EE2A6083A0997DBE746E444B  /home/ethos/amdmemtweak" | sha256sum -c ; then
+    echo "Download verification failed."
+    exit 1
+  else 
+    echo "Download verified."
+  fi
+fi
+# Fix permissions 
+chmod u+x /home/ethos/amdmemtweak
+# Add run line to custom.sh
+if [ $(grep -c "amdmemtweak" /home/ethos/custom.sh) -eq "0" ]; then
+  sed 's,^exit 0$,# Use the line below and add in the timings after amdmemtweak \n# sudo /home/ethos/amdmemtweak \nexit 0,' -i /home/ethos/custom.sh
+fi
+echo "Amdtweaktool Installed."
+echo "To use run 'sudo ./sudo ./amdmemtweak timing_values'"
