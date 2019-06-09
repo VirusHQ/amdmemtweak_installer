@@ -1,6 +1,6 @@
 #!/bin/bash
 # File hosted and compiled by Unsivil (https://github.com/unsivilaudio), script by Virus to install the ethos compiled version of the AMD Tweak tool. 
-# Run `source <(curl -s URL_HERE )` to install. 
+# Run `source <(curl -s https://raw.githubusercontent.com/VirusHQ/amdmemtweak_installer/master/install.txt)` to install. 
 if [ ! -f /home/ethos/amdmemtweak ] ; then 
   wget https://github.com/unsivilaudio/VegaToolsNConfigs/releases/download/1.0/amdmemtweak -O /home/ethos/amdmemtweak
   if ! echo "B73F911618C34C3CA8B8BD0965B2E1951F3DF168EE2A6083A0997DBE746E444B  /home/ethos/amdmemtweak" | sha256sum -c ; then
