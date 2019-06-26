@@ -13,8 +13,8 @@ fi
 # Fix permissions 
 chmod u+x /home/ethos/amdmemtweak
 # Add run line to custom.sh
-if [ $(grep -c "amdmemtweak" /home/ethos/custom.sh) -eq "0" ]; then
+if [ '$(grep -c "amdmemtweak" /home/ethos/custom.sh) -eq "0"' ]; then
   sed 's,^exit 0$,# Use the line below and add in the timings after amdmemtweak \n# sudo /home/ethos/amdmemtweak \nexit 0,' -i /home/ethos/custom.sh
 fi
 echo "Amdtweaktool Installed."
-echo "To use run 'sudo ./sudo ./amdmemtweak timing_values'"
+echo "To use run 'sudo ./amdmemtweak timing_values'"
