@@ -18,3 +18,4 @@ if [ "$(grep -c 'amdmemtweak' /home/ethos/custom.sh)" -eq "0" ]; then
 fi
 echo "Amdtweaktool Installed."
 echo "To use run 'sudo ./amdmemtweak timing_values'"
+echo "One will be able to find timings on the dev's BCT page , https://bitcointalk.org/index.php?topic=5123724.0"
